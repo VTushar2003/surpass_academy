@@ -150,6 +150,7 @@ const AddUser = () => {
                                     <Option value="teacher">Teacher</Option>
                                     <Option value="staff">Staff</Option>
                                     <Option value="accountant">Accountant</Option>
+                                    <Option value="student">Student</Option>
                                 </Select>
                             </Form.Item>
                         </Col>
