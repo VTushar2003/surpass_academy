@@ -3,7 +3,7 @@ import { createContext, useEffect, useState, useContext } from "react";
 const Context = createContext();
 
 const ContextProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState([]);
     const [userData, setUserData] = useState([]);
 
     useEffect(() => {
@@ -40,6 +40,7 @@ const ContextProvider = ({ children }) => {
         localStorage.setItem("userData", JSON.stringify(updatedUserData));
     }
     console.log(userData);
+    console.log(user);
 
     return (
         <Context.Provider value={{ handleLogin, handleLogout, user, userData, addUser, handleDelete }}>

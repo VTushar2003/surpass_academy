@@ -125,9 +125,11 @@ const WeeklyChallenge = () => {
                                 </Form.Item>
                             </Col>
                         </Row>
-                        <Row className='w-full bg-black flex items-center justify-center'>
-                            <Col className='flex items-center w-full justify-center'>
-                                <RichTextEditor />
+                        <Row className='w-full flex items-center justify-center'>
+                            <Col className='flex w-full items-center'>
+                                <Form.Item label="Description" name="description" className='w-full p-5 font-semibold'>
+                                    <RichTextEditor />
+                                </Form.Item>
                             </Col>
                         </Row>
                         {/* Submit Button */}
@@ -144,7 +146,7 @@ const WeeklyChallenge = () => {
 
                     </TableComp>
                 </Form>
-                <TableComp title="List Weekly Challenge">
+                <TableComp title="List Weekly Challenge" extraStyles="mt-8">
                     <Table columns={columns}
                         size="small"
                         className='p-6 text-[#bebebe]'
