@@ -1,0 +1,142 @@
+/*
+  NestJS + MongoDB Architecture & Schema Design
+  - Backend Structure
+  - Mongoose Schemas
+  - REST APIs
+*/
+
+// 1. Project Architecture
+const projectStructure = `
+myflama-backend/
+├── src/
+│   ├── modules/
+│   │   ├── auth/
+│   │   ├── users/
+│   │   ├── savings/
+│   │   ├── chat/
+│   │   ├── posts/
+│   │   ├── monetization/
+│   │   ├── adminPanel/
+│   │   ├── analytics/
+│   │   ├── rewards/
+│   │   ├── ads/
+│   │   ├── payments/
+│   │   └── common/
+│   ├── config/
+│   ├── main.ts
+│   ├── app.module.ts
+│   ├── app.controller.ts
+│   └── common/
+├── .env
+├── package.json
+├── tsconfig.json
+└── README.md
+`
+
+// 2. TypeScript and File Structure Rules
+const typeScriptRules = {
+  fileExtensions: [
+    '*.ts',                    // All files must use TypeScript
+    '*.spec.ts',              // Test files
+    '*.interface.ts',         // Interface definitions
+    '*.dto.ts',               // Data Transfer Objects
+    '*.schema.ts',            // MongoDB/Mongoose schemas
+  ],
+  
+  strictTyping: {
+    required: true,
+    rules: [
+      'Use explicit types instead of "any"',
+      'Enable strict mode in tsconfig.json',
+      'Use interfaces for data structures',
+      'Use enums for fixed values',
+      'Implement proper type guards'
+    ]
+  }
+}
+
+// 3. Code Documentation Rules
+const documentationRules = {
+  comments: {
+    classLevel: '/** Class level documentation using JSDoc style */',
+    methodLevel: '/** Method documentation with @param and @returns tags */',
+    interfaceLevel: '/** Interface documentation explaining purpose */',
+    variableLevel: '// Inline comments for complex variables'
+  },
+  
+  required: [
+    'All public methods must be documented',
+    'Complex business logic needs explanation',
+    'Schema definitions must include field descriptions',
+    'API endpoints must have swagger documentation'
+  ]
+}
+
+// 4. MongoDB/Mongoose Schema Design Rules
+const schemaRules = {
+  bestPractices: [
+    'Use schema validation with mongoose',
+    'Define indexes for frequently queried fields',
+    'Implement proper relationships (refs)',
+    'Use timestamps: true for automatic timestamps',
+    'Include schema versions for migrations'
+  ],
+  
+  structure: {
+    required: [
+      'Clear field naming',
+      'Proper data types',
+      'Default values where appropriate',
+      'Required field markers',
+      'Custom validation when needed'
+    ],
+    example: `
+      @Schema()
+      export class UserSchema {
+        @Prop({ required: true })
+        name: string;
+
+        @Prop({ unique: true, index: true })
+        email: string;
+      }
+    `
+  }
+}
+
+// 5. NestJS Implementation Rules
+const nestJsRules = {
+  architecture: [
+    'Follow modular structure',
+    'Use dependency injection',
+    'Implement proper exception filters',
+    'Use pipes for validation',
+    'Implement guards for authentication'
+  ],
+  
+  patterns: {
+    required: [
+      'Repository pattern for data access',
+      'Service layer for business logic',
+      'DTO objects for data transfer',
+      'Use decorators appropriately',
+      'Implement proper middleware'
+    ]
+  }
+}
+
+// 6. Package Management Rules
+const packageManagementRules = {
+  manager: 'pnpm',
+  requirements: [
+    'Use pnpm-lock.yaml for dependency locking',
+    'Maintain clean dependencies',
+    'Use workspace features for monorepo',
+    'Regular dependency updates',
+    'Security audit compliance'
+  ],
+  commands: {
+    install: 'pnpm install',
+    update: 'pnpm update',
+    run: 'pnpm run'
+  }
+}
