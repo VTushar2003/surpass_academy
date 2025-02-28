@@ -26,10 +26,6 @@ export class CustomerAuthService {
       throw new ConflictException('Email is already in use');
     }
 
-    // Hash password before saving
-    const hashedPassword = await bcrypt.hash(registerDto.password, 10);
-    registerDto.password = hashedPassword;
-
     // Create the customer
     const customer = await this.customerService.create(registerDto);
     return this.generateAuthResponse(customer);
